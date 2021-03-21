@@ -1,13 +1,25 @@
- alert("hello");
+alert("hello");
 
- var work= prompt("what do you want to see? Thobe or facemask?");
+var work = prompt("what do you want to see? thobe or bookmark?");
 
- if (work=="Thobe"){
-     document.write('<img src="photo/work 3.jpg" width="200px"/>');
+while (work !== 'thobe' && work !== 'bookmark') {
+    work = prompt('please choose Thobe/bookmark');
+}
+var numOfItems = prompt('How many items do you want?');
 
- }else if(work=="facemask"){
-     document.write('<img src="photo/work 1.jpg"  width="200px"/>'); 
+var stitsh = '';
+var theResult = '';
 
- }else{
-     document.write('<img src="photo/work 2.jpg" width="200px"/>')
- }
+if (work == 'thobe') {
+    stitsh = ('<img src="photo/work 3.jpg" width="200px"/>');
+
+} else if (work == 'bookmark') {
+    stitsh = ('<img src="photo/work 2.jpg"  width="200px"/>');
+
+}
+
+for (var i = 0; i < numOfItems; i++) {
+    theResult += stitsh
+}
+console.log(theResult);
+document.write(theResult);
